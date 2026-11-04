@@ -60,6 +60,7 @@
 
 #if defined(MLK_CONFIG_USE_NATIVE_BACKEND_ARITH)
 #if defined(MLK_SYS_AARCH64)
+#include "src/native/aarch64/sme2/mlkem_sme2_arith.S"
 #include "src/native/aarch64/src/mlkem_intt_aarch64_asm.S"
 #include "src/native/aarch64/src/mlkem_ntt_aarch64_asm.S"
 #include "src/native/aarch64/src/mlkem_poly_mulcache_compute_aarch64_asm.S"
@@ -247,6 +248,29 @@
 #undef mlk_kem_enc_derand
 #undef mlk_kem_keypair
 #undef mlk_kem_keypair_derand
+/* mlkem/src/native/aarch64/sme2/mlkem_sme2_decaps.h */
+#undef MLK_NATIVE_AARCH64_SME2_MLKEM_SME2_DECAPS_H
+#undef MLK_SME2_CONTEXT_PARAMETERS_5
+#undef MLK_SME2_DECAPS_ERR_ARGUMENT
+#undef MLK_SME2_DECAPS_ERR_BACKEND
+#undef MLK_SME2_DECAPS_ERR_BATCH
+#undef MLK_SME2_DECAPS_ERR_SVL
+#undef mlk_sme2_decaps_batch
+#undef mlk_sme2_decaps_key_clear
+#undef mlk_sme2_decaps_prepare
+#undef mlk_sme2_decaps_workspace_clear
+/* mlkem/src/native/aarch64/sme2/mlkem_sme2_internal.h */
+#undef MLK_NATIVE_AARCH64_SME2_INTERNAL_H
+#undef MLK_SME2_NOINLINE
+#undef SME2_GROUP
+#undef SME2_MAX_BATCH
+#undef SME2_MAX_GROUPS
+#undef SME2_Q
+#undef sme2_inv2_roots_centered
+#undef sme2_inverse_reconstruct
+#undef sme2_partial_ntt3_neon
+#undef sme2_partial_ntt_scalar
+#undef sme2_residual_mod_q
 /* mlkem/src/params.h */
 #undef MLKEM_DU
 #undef MLKEM_DV
@@ -394,6 +418,7 @@
 #undef MLK_SYS_AARCH64
 #undef MLK_SYS_AARCH64_EB
 #undef MLK_SYS_AARCH64_NEON
+#undef MLK_SYS_AARCH64_SME2
 #undef MLK_SYS_APPLE
 #undef MLK_SYS_ARMV81M_MVE
 #undef MLK_SYS_BIG_ENDIAN
@@ -557,6 +582,26 @@
 #undef MLK_USE_NATIVE_POLY_TOBYTES
 #undef MLK_USE_NATIVE_POLY_TOMONT
 #undef MLK_USE_NATIVE_REJ_UNIFORM
+/* mlkem/src/native/aarch64/sme2/mlkem_sme2.h */
+#undef MLK_NATIVE_AARCH64_SME2_MLKEM_SME2_H
+#undef mlk_sme2_cross_matrix_d3
+/* mlkem/src/native/aarch64/sme2/mlkem_sme2_backend.h */
+#undef MLK_NATIVE_AARCH64_SME2_BACKEND_H
+#undef MLK_SME2_ALIGN64
+#undef MLK_SME2_DOTS
+#undef MLK_SME2_ERR_SVL
+#undef MLK_SME2_GROUP
+#undef MLK_SME2_K
+#undef MLK_SME2_MAX_BATCH
+#undef MLK_SME2_MAX_GROUPS
+#undef MLK_SME2_N
+#undef MLK_SME2_SVL_BYTES
+#undef mlk_sme2_arith_batch
+#undef mlk_sme2_arith_batch_rolling_preloaded
+#undef mlk_sme2_arith_batch_workspace
+#undef mlk_sme2_arith_batch_workspace_preloaded
+#undef mlk_sme2_check_svl
+#undef mlk_sme2_prepare_public
 /* mlkem/src/native/aarch64/src/arith_native_aarch64.h */
 #undef MLK_NATIVE_AARCH64_SRC_ARITH_NATIVE_AARCH64_H
 #undef mlk_aarch64_invntt_zetas_layer12345

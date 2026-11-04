@@ -52,6 +52,11 @@
 #define MLK_SYS_AARCH64_NEON
 #endif
 
+/* Check if the AArch64 compilation target supports SME2. */
+#if defined(MLK_SYS_AARCH64) && defined(__ARM_FEATURE_SME2)
+#define MLK_SYS_AARCH64_SME2
+#endif
+
 /* Check if we're running on an AArch64 big endian system. */
 #if defined(__AARCH64EB__)
 #define MLK_SYS_AARCH64_EB
